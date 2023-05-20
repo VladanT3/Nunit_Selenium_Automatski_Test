@@ -1,1 +1,1 @@
-# AutomationTestStoreDomaci
+# Nunit_Selenium_Automatski_Test
