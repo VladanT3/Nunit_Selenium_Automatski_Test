@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nunit_Selenium_Automatski_Test", "Nunit_Selenium_Automatski_Test.csproj", "{4EA1FC85-E2AD-4632-984B-AA00760484D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{132834F8-A270-490E-9367-119FEBF1E979}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EA1FC85-E2AD-4632-984B-AA00760484D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EA1FC85-E2AD-4632-984B-AA00760484D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EA1FC85-E2AD-4632-984B-AA00760484D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EA1FC85-E2AD-4632-984B-AA00760484D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C4631112-7051-407E-A69D-3EB267D851D6}
+	EndGlobalSection
+EndGlobal
