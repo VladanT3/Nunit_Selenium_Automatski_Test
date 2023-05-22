@@ -2,8 +2,6 @@
 using OpenQA.Selenium;
 using SeleniumExtras.WaitHelpers;
 using System.Collections.ObjectModel;
-using OpenQA.Selenium.DevTools.V111.Accessibility;
-using System.Xml.Linq;
 
 namespace AutomationTestStoreDomaci.Utils
 {
@@ -57,47 +55,6 @@ namespace AutomationTestStoreDomaci.Utils
         {
             WaitElementVisibility(driver, element);
             return driver.FindElement(element).Text;
-        }
-
-
-        /// <summary>
-        /// Metoda koja cita text iz alert box-a
-        /// </summary>
-        public static string ReadAlertText(IWebDriver driver)
-        {
-            return driver.SwitchTo().Alert().Text;
-        }
-
-
-        /// <summary>
-        /// Metoda koja potvrdjuje alert box
-        /// </summary>
-        public static void CloseAlert(IWebDriver driver)
-        {
-            driver.SwitchTo().Alert().Accept();
-        }
-
-
-        /// <summary>
-        /// Proverava da li element postoji
-        /// </summary>
-        /// <param name="element">By element</param>
-        /// <returns></returns>
-        public static bool ElementExists(IWebDriver driver, By element)
-        {
-            bool exists;
-
-            try
-            {
-                driver.FindElement(element);
-                exists = true;
-            }
-            catch (NoSuchElementException)
-            {
-                exists = false;
-            }
-
-            return exists;
         }
 
 

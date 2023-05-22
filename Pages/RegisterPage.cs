@@ -1,6 +1,4 @@
-﻿using AutomationTestStoreDomaci.Utils;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
+﻿using OpenQA.Selenium;
 
 namespace AutomationTestStoreDomaci.Pages
 {

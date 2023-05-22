@@ -1,6 +1,5 @@
 ﻿using AutomationTestStoreDomaci.Utils;
 using NUnit.Framework;
-using RazorEngine.Compilation.ImpromptuInterface;
 
 namespace AutomationTestStoreDomaci.Tests
 {

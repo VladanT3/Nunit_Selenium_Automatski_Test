@@ -158,7 +158,7 @@ namespace AutomationTestStoreDomaci.Pages
         public string GetSuccessUrl()
         {
             //thread sleep jer uhvati link od prosle stranice
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
             return GetUrlLink();
         }
     }

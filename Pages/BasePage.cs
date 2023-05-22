@@ -1,8 +1,5 @@
 ﻿using OpenQA.Selenium;
 using AutomationTestStoreDomaci.Utils;
-using OpenQA.Selenium.Support.UI;
-using SeleniumExtras.WaitHelpers;
-using System;
 
 namespace AutomationTestStoreDomaci.Pages
 {
@@ -49,36 +46,6 @@ namespace AutomationTestStoreDomaci.Pages
         protected void ClearTextFromElement(By element)
         {
             CommonMethods.ClearText(driver, element);
-        }
-
-
-        /// <summary>
-        /// Poziva common metodu ReadAlertText da vrati tekst iz Alert Box-a
-        /// </summary>
-        /// <returns>Tekst iz Alert Box-a</returns>
-        protected string ReadTextFromAlertBox()
-        {
-            return CommonMethods.ReadAlertText(driver);
-        }
-
-
-        /// <summary>
-        /// Poziva common metodu CloseAlert da zatvori Alert Box
-        /// </summary>
-        protected void AcceptAlertBox()
-        {
-            CommonMethods.CloseAlert(driver);
-        }
-
-
-        /// <summary>
-        /// Poziva common metodu ElementExists da vrati da li element postoji ili ne
-        /// </summary>
-        /// <param name="element">Element</param>
-        /// <returns>Bool vrednost u odnosu da li element postoji</returns>
-        protected bool CheckIfElementExists(By element)
-        {
-            return CommonMethods.ElementExists(driver, element);
         }
 
 
