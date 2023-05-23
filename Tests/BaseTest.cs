@@ -1,7 +1,7 @@
-﻿using AutomationTestStoreDomaci.Utils;
-using NUnit.Framework;
+﻿using NUnit.Framework;
+using Nunit_Selenium_Automatski_Test.Utils;
 
-namespace AutomationTestStoreDomaci.Tests
+namespace Nunit_Selenium_Automatski_Test.Tests
 {
     [TestFixture]
     public class BaseTest

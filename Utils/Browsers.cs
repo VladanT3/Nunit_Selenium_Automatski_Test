@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
 
-namespace AutomationTestStoreDomaci.Utils
+namespace Nunit_Selenium_Automatski_Test.Utils
 {
     /// <summary>
     /// Klasa koja konfigurise browser 

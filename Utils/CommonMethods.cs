@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using SeleniumExtras.WaitHelpers;
 using System.Collections.ObjectModel;
 
-namespace AutomationTestStoreDomaci.Utils
+namespace Nunit_Selenium_Automatski_Test.Utils
 {
     public class CommonMethods
     {
@@ -242,6 +242,37 @@ namespace AutomationTestStoreDomaci.Utils
             }
 
             return sum;
+        }
+
+
+        /// <summary>
+        /// Proverava da li element postoji
+        /// </summary>
+        /// <param name="element">By element</param>
+        /// <returns>Da li element postoji ili ne</returns>
+        public static bool ElementExists(IWebDriver driver, By element)
+        {
+            bool exists = false;
+
+            try
+            {
+                IWebElement tryElement = driver.FindElement(element);
+                exists = true;
+            }
+            catch (NoSuchElementException)
+            {
+                throw;
+            }
+
+            return exists;
+        }
+
+
+        public static int ReturnNumberOfRowsFromTable(IWebDriver driver, By tableRows)
+        {
+            ReadOnlyCollection<IWebElement> rows = driver.FindElements(tableRows);
+
+            return rows.Count;
         }
     }
 }

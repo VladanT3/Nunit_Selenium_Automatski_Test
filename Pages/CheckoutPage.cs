@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace AutomationTestStoreDomaci.Pages
+namespace Nunit_Selenium_Automatski_Test.Pages
 {
     public class CheckoutPage : BasePage
     {

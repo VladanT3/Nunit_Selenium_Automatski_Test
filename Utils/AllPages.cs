@@ -1,7 +1,7 @@
-﻿using AutomationTestStoreDomaci.Pages;
+﻿using Nunit_Selenium_Automatski_Test.Pages;
 using SeleniumExtras.PageObjects;
 
-namespace AutomationTestStoreDomaci.Utils
+namespace Nunit_Selenium_Automatski_Test.Utils
 {
     /// <summary>
     /// Klasa koja inicijalicuje potrebnu stranicu
@@ -32,5 +32,7 @@ namespace AutomationTestStoreDomaci.Utils
         public ProductPage ProductPage => GetPages<ProductPage>();
         public AccountPage AccountPage => GetPages<AccountPage>();
         public CheckoutPage CheckoutPage => GetPages<CheckoutPage>();
+        public WishlistPage WishlistPage => GetPages<WishlistPage>();
+        public ChangePasswordPage ChangePasswordPage => GetPages<ChangePasswordPage>();
     }
 }

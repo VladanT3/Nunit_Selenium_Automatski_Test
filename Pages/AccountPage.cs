@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace AutomationTestStoreDomaci.Pages
+namespace Nunit_Selenium_Automatski_Test.Pages
 {
     public class AccountPage : BasePage
     {
@@ -25,6 +25,8 @@ namespace AutomationTestStoreDomaci.Pages
         By homeButton = By.XPath("//ul[@class='nav-pills categorymenu']/li/a[contains(., 'Home')]");
         By guestCheckoutRadio = By.Id("accountFrm_accountguest");
         By continueButton = By.XPath("//button[@title='Continue']");
+        By wishlistButton = By.XPath("//ul[@class='side_account_list']/li[2]");
+        By changePasswordButton = By.XPath("//ul[@class='side_account_list']/li[4]");
 
 
         /// <summary>
@@ -59,6 +61,22 @@ namespace AutomationTestStoreDomaci.Pages
         {
             ClickGuestCheckoutRadioButton();
             ClickContinueButton();
+        }
+
+        /// <summary>
+        /// Klik na wishlist dugme
+        /// </summary>
+        public void ClickOnWishlistButton()
+        {
+            ClickOnElement(wishlistButton);
+        }
+
+        /// <summary>
+        /// Klik na change password dugme
+        /// </summary>
+        public void ClickChangePasswordButton()
+        {
+            ClickOnElement(changePasswordButton);
         }
     }
 }

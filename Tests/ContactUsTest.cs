@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace AutomationTestStoreDomaci.Tests
+namespace Nunit_Selenium_Automatski_Test.Tests
 {
     public class ContactUsTest : BaseTest
     {

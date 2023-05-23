@@ -1,4 +1,4 @@
-﻿namespace AutomationTestStoreDomaci.TestData
+﻿namespace Nunit_Selenium_Automatski_Test.TestData
 {
     public class TestData
     {
@@ -50,6 +50,15 @@
         public static class SearchProduct
         {
             public const string productName = "ck one Summer 3.4 oz";
+        }
+        public static class AddItemToWishlist
+        {
+            public const string productName = "ck one Summer 3.4 oz";
+        }
+        public static class ChangePassword
+        {
+            public const string currentPassword = "test",
+                                newPassword = "test1";
         }
     }
 }

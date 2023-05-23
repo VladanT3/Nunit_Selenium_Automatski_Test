@@ -1,7 +1,7 @@
-﻿using OpenQA.Selenium;
-using AutomationTestStoreDomaci.Utils;
+﻿using Nunit_Selenium_Automatski_Test.Utils;
+using OpenQA.Selenium;
 
-namespace AutomationTestStoreDomaci.Pages
+namespace Nunit_Selenium_Automatski_Test.Pages
 {
     public class BasePage
     {
@@ -110,6 +110,28 @@ namespace AutomationTestStoreDomaci.Pages
         protected float GetSumOfColumnValues(By tableRows, int numberOfRowsToSkip = 0, int indexOfColumnsToSum = 1)
         {
             return CommonMethods.SumColumnValues(driver, tableRows, numberOfRowsToSkip, indexOfColumnsToSum);
+        }
+
+
+        /// <summary>
+        /// Proverava da li element postoji
+        /// </summary>
+        /// <param name="element">Element</param>
+        /// <returns>Bool vrednost u odnosu da li element postoji</returns>
+        protected bool CheckIfElementExists(By element)
+        {
+            return CommonMethods.ElementExists(driver, element);
+        }
+
+
+        /// <summary>
+        /// Vraca broj redova u tabeli
+        /// </summary>
+        /// <param name="tableRows">Redovi tabele</param>
+        /// <returns>Broj redova</returns>
+        protected int GetNumberOfRowsFromTable(By tableRows)
+        {
+            return CommonMethods.ReturnNumberOfRowsFromTable(driver, tableRows);
         }
     }
 }

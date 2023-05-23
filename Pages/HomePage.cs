@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 
-namespace AutomationTestStoreDomaci.Pages
+namespace Nunit_Selenium_Automatski_Test.Pages
 {
     public class HomePage : BasePage
     {
@@ -34,6 +35,7 @@ namespace AutomationTestStoreDomaci.Pages
         By currencyPound = By.XPath("//li/a[contains(., '£ Pound Sterling')]");
         By searchInput = By.Id("filter_keyword");
         By searchButton = By.XPath("//i[@class='fa fa-search']");
+        By accountButton = By.XPath("//li[@class='dropdown']/a[@class='top menu_account']");
 
 
         /// <summary>
@@ -127,7 +129,44 @@ namespace AutomationTestStoreDomaci.Pages
             ClickOnElement(productLink);
         }
 
+
         /// <summary>
+        /// Menja valutu u odredjenu vrednost koja je prosledjena pri pozivu
+        /// </summary>
+        /// <param name="currency">Valuta</param>
+        public void ChangeCurrency(string currency)
+        {
+            IWebElement mainMenu = driver.FindElement(currencyDropdown);
+
+            //Instantiating Actions class
+            Actions actions = new Actions(driver);
+
+            //Hovering on main menu
+            actions.MoveToElement(mainMenu);
+
+            IWebElement subMenu;
+            switch (currency)
+            {
+                case "eur":
+                    subMenu = driver.FindElement(currencyEuro);
+                    break;
+                case "pound":
+                    subMenu = driver.FindElement(currencyPound);
+                    break;
+                default:
+                    subMenu = null;
+                    break;
+            }
+
+            //To mouseover on sub menu
+            actions.MoveToElement(subMenu).Click();
+
+
+            //build()- used to compile all the actions into a single step
+            actions.Click().Build().Perform();
+        }
+
+        /*/// <summary>
         /// Postavlja valutu na evro
         /// </summary>
         public void SetCurrencyToEuro()
@@ -143,7 +182,7 @@ namespace AutomationTestStoreDomaci.Pages
         {
             ClickCurrencyDropdownMenu();
             ClickCurrencyPound();
-        }
+        }*/
 
         /// <summary>
         /// Dodaje dva proizvoda u korpu
@@ -162,6 +201,14 @@ namespace AutomationTestStoreDomaci.Pages
         {
             TypeInSearchBox(productName);
             ClickSearchButton();
+        }
+
+        /// <summary>
+        /// Klik na account dugme
+        /// </summary>
+        public void ClickOnAccountButton()
+        {
+            ClickOnElement(accountButton);
         }
     }
 }

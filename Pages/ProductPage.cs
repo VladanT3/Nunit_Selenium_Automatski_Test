@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace AutomationTestStoreDomaci.Pages
+namespace Nunit_Selenium_Automatski_Test.Pages
 {
     public class ProductPage : BasePage
     {
@@ -24,6 +24,7 @@ namespace AutomationTestStoreDomaci.Pages
         //Lokatori
         By addToCartButton = By.XPath("//a[contains(., 'Add to Cart')]");
         By productNameField = By.XPath("//h1");
+        By wishlistButton = By.XPath("//a[@class='wishlist_add btn btn-large']");
 
 
         /// <summary>
@@ -41,6 +42,14 @@ namespace AutomationTestStoreDomaci.Pages
         public string GetProductName()
         {
             return ReadTextFromElement(productNameField);
+        }
+
+        /// <summary>
+        /// Klik na wishlist dugme
+        /// </summary>
+        public void ClickOnWishlistButton()
+        {
+            ClickOnElement(wishlistButton);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace AutomationTestStoreDomaci.Tests
+namespace Nunit_Selenium_Automatski_Test.Tests
 {
     public class PurchaseItemTest : BaseTest
     {
@@ -29,7 +29,7 @@ namespace AutomationTestStoreDomaci.Tests
         public void PurchaseItemWithEUR()
         {
             //menja se valuta u EUR
-            Pages.HomePage.SetCurrencyToEuro();
+            Pages.HomePage.ChangeCurrency(AppConstants.Constants.Currencies.euro);
             //klik na login or register link
             Pages.HomePage.ClickLoginOrRegisterLink();
             //popunjavanje forme i klik na submit
@@ -52,7 +52,7 @@ namespace AutomationTestStoreDomaci.Tests
         public void GuestPurchaseItemWithGBP()
         {
             //menja se valuta u GBP
-            Pages.HomePage.SetCurrencyToPound();
+            Pages.HomePage.ChangeCurrency(AppConstants.Constants.Currencies.pound);
             //klik na home button
             Pages.HomePage.AddProductToCart();
             //klik na checkout dugme
