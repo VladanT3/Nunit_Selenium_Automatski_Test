@@ -2,12 +2,12 @@
 
 namespace Nunit_Selenium_Automatski_Test.Pages
 {
-    public class CheckoutPage : BasePage
+    public class ManageAddressBookPage : BasePage
     {
         /// <summary>
         /// Podrazumevani konstruktor
         /// </summary>
-        public CheckoutPage()
+        public ManageAddressBookPage()
         {
             driver = null;
         }
@@ -15,29 +15,36 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         /// Parametrizovani konstruktor
         /// </summary>
         /// <param name="webDriver">Driver</param>
-        public CheckoutPage(IWebDriver webDriver)
+        public ManageAddressBookPage(IWebDriver webDriver)
         {
             driver = webDriver;
         }
 
 
         //Lokatori
-        By confirmOrderButton = By.Id("checkout_btn");
-        By firstNameInput = By.Id("guestFrm_firstname");
-        By lastNameInput = By.Id("guestFrm_lastname");
-        By emailInput = By.Id("guestFrm_email");
-        By addressInput = By.Id("guestFrm_address_1");
-        By cityInput = By.Id("guestFrm_city");
-        By regionStateSelect = By.Id("guestFrm_zone_id");
-        By regionStateSelectOptions = By.XPath("//select[@id='guestFrm_zone_id']/option");
-        By zipInput = By.Id("guestFrm_postcode");
-        By countrySelect = By.Id("guestFrm_country_id");
-        By countrySelectOptions = By.XPath("//select[@id='guestFrm_country_id']/option");
+        By newAddressButton = By.XPath("//a[@title='New Address']");
+        By firstNameInput = By.Id("AddressFrm_firstname");
+        By lastNameInput = By.Id("AddressFrm_lastname");
+        By emailInput = By.Id("AddressFrm_email");
+        By addressInput = By.Id("AddressFrm_address_1");
+        By cityInput = By.Id("AddressFrm_city");
+        By regionStateSelect = By.Id("AddressFrm_zone_id");
+        By regionStateSelectOptions = By.XPath("//select[@id='AddressFrm_zone_id']/option");
+        By zipInput = By.Id("AddressFrm_postcode");
+        By countrySelect = By.Id("AddressFrm_country_id");
+        By countrySelectOptions = By.XPath("//select[@id='AddressFrm_country_id']/option");
         By continueButton = By.XPath("//button[@title='Continue']");
-        By editShippingAddressButton = By.XPath("//table[contains(@class, 'table confirm_shippment_options')]//a");
-        By changeAddressButton = By.XPath("//div[contains(@class, 'input-group')]/a");
+        By successMsg = By.XPath("//div[@class='alert alert-success']");
+        By deleteButton = By.XPath("//button[@title='Delete']");
 
 
+        /// <summary>
+        /// Klik na new address dugme
+        /// </summary>
+        private void ClickNewAddressButton()
+        {
+            ClickOnElement(newAddressButton);
+        }
 
         /// <summary>
         /// Upisuje first name u odgovarajuce polje
@@ -55,15 +62,6 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         private void EnterLastName(string lastName)
         {
             WriteTextToElement(lastNameInput, lastName);
-        }
-
-        /// <summary>
-        /// Upisuje email u odgovarajuce polje
-        /// </summary>
-        /// <param name="email">E-mail</param>
-        private void EnterEmail(string email)
-        {
-            WriteTextToElement(emailInput, email);
         }
 
         /// <summary>
@@ -123,15 +121,14 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         /// </summary>
         /// <param name="firstName">First name</param>
         /// <param name="lastName">Last name</param>
-        /// <param name="email">E-mail</param>
         /// <param name="address">Address</param>
         /// <param name="city">City</param>
         /// <param name="zip">Zip</param>
-        public void FillCheckoutForm(string firstName, string lastName, string email, string address, string city, string zip)
+        public void CreateNewAddress(string firstName, string lastName, string address, string city, string zip)
         {
+            ClickNewAddressButton();
             EnterFirstName(firstName);
             EnterLastName(lastName);
-            EnterEmail(email);
             EnterAddress(address);
             EnterCity(city);
             ChooseRandomCountry();
@@ -145,41 +142,21 @@ namespace Nunit_Selenium_Automatski_Test.Pages
             ClickContinueButton();
         }
 
-
         /// <summary>
-        /// Klik na confirm order dugme
+        /// Vraca poruku nakon pravljenja nove adrese
         /// </summary>
-        public void ClickConfirmOrderButton()
+        /// <returns>Poruka</returns>
+        public string GetSuccessMessage()
         {
-            ClickOnElement(confirmOrderButton);
+            return ReadTextFromElement(successMsg);
         }
 
         /// <summary>
-        /// Vraca url trenutne stranice
+        /// Klik na delete dugme
         /// </summary>
-        /// <returns>Url stranice</returns>
-        public string GetSuccessUrl()
+        public void ClickDeleteButton()
         {
-            //thread sleep jer uhvati link od prosle stranice
-            Thread.Sleep(1000);
-            return GetUrlLink();
+            ClickOnElement(deleteButton);
         }
-
-        /// <summary>
-        /// Klik na edit shipping dugme
-        /// </summary>
-        public void ClickEditShippingAddress()
-        {
-            ClickOnElement(editShippingAddressButton);
-        }
-
-        /// <summary>
-        /// Klik na change address dugme
-        /// </summary>
-        public void ClickChangeAddress()
-        {
-            ClickOnElement(changeAddressButton);
-        }
-
     }
 }
