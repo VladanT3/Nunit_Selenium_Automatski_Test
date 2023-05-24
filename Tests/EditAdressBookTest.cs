@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualBasic;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace Nunit_Selenium_Automatski_Test.Tests
 {
@@ -14,21 +13,21 @@ namespace Nunit_Selenium_Automatski_Test.Tests
             Pages.LoginPage.LoginUser(TestData.TestData.Login.username, TestData.TestData.Login.password);
             //klik na account dugme
             Pages.HomePage.ClickOnAccountButton();
-            Pages.AdressBookPage.ClickOnManageBookAdress();
+            Pages.AccountPage.ClickManageAddressBookButton();
         }
         
         [Test]
         public void EditAdressBook()
         {
-            Pages.AdressBookPage.ClickOnEditAdressBook();
-            Pages.AdressBookPage.FillEditAdressBook(
-                TestData.TestData.Checkout.firstName,
-                TestData.TestData.Checkout.lastName,
-                TestData.TestData.Checkout.address,
-                TestData.TestData.Checkout.city,
-                TestData.TestData.Checkout.zip);
+            Pages.ManageAddressBookPage.ClickOnEditAdressBook();
+            Pages.ManageAddressBookPage.FillEditAdressBook(
+                TestData.TestData.EditAddress.firstName,
+                TestData.TestData.EditAddress.lastName,
+                TestData.TestData.EditAddress.address,
+                TestData.TestData.EditAddress.city,
+                TestData.TestData.EditAddress.zip);
 
-            Assert.AreEqual(AppConstants.Constants.Messages.adressBookEditSuccess, Pages.AdressBookPage.GetSuccessText());
+            Assert.AreEqual(AppConstants.Constants.Messages.adressBookEditSuccess, Pages.ManageAddressBookPage.GetSuccessMessage());
         }
     }
 }
