@@ -34,5 +34,6 @@ namespace Nunit_Selenium_Automatski_Test.Utils
         public CheckoutPage CheckoutPage => GetPages<CheckoutPage>();
         public WishlistPage WishlistPage => GetPages<WishlistPage>();
         public ChangePasswordPage ChangePasswordPage => GetPages<ChangePasswordPage>();
+        public AdressBookPage AdressBookPage => GetPages<AdressBookPage>();
     }
 }
