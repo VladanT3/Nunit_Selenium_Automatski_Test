@@ -60,5 +60,13 @@
             public const string currentPassword = "test",
                                 newPassword = "test1";
         }
+        public static class AddNewAddress
+        {
+            public const string firstName = "test",
+                                lastName = "test",
+                                address = "test 123",
+                                city = "test",
+                                zip = "54321";
+        }
     }
 }
