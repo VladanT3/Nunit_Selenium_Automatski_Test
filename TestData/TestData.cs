@@ -60,5 +60,14 @@
             public const string currentPassword = "test",
                                 newPassword = "test1";
         }
+
+        public static class EditAccount
+        {
+            public const string firstName = "Test",
+                                lastName = "Tesic",
+                                email = "testtestic@test.com",
+                                phoneNumber = "060555996",
+                                fax = "123123";
+        }
     }
 }

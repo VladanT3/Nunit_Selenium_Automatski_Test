@@ -27,7 +27,8 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         By continueButton = By.XPath("//button[@title='Continue']");
         By wishlistButton = By.XPath("//ul[@class='side_account_list']/li[2]");
         By changePasswordButton = By.XPath("//ul[@class='side_account_list']/li[4]");
-
+        By editAccountDetailsButton = By.XPath("//ul[@class='side_account_list']/li[3]");
+        By successMsg = By.XPath("//div[@class='alert alert-success']");
 
         /// <summary>
         /// Klik na guest checkout radio button
@@ -78,5 +79,19 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         {
             ClickOnElement(changePasswordButton);
         }
+
+        /// <summary>
+        /// Klik na edit account dugme
+        /// </summary>
+        public void ClickEditAccountDetailsButton()
+        {
+            ClickOnElement(editAccountDetailsButton);
+        }
+
+        public string GetSuccessMessage()
+        {
+            return ReadTextFromElement(successMsg);
+        }
+
     }
 }
