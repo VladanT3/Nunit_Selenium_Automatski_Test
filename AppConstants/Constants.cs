@@ -11,10 +11,12 @@
         }
         public static class Messages
         {
-            //haos
             public const string forgottenPasswordSuccessMessage = "×\r\nSuccess: Password reset link has been sent to your e-mail address.",
                                 forgottenLoginSuccessMessage = "×\r\nSuccess: Your login name reminder has been sent to your e-mail address.",
                                 changePasswordSuccessMessage = "×\r\nSuccess: Your password has been successfully updated.",
+                                editAccountSuccessMessage = "×\r\nSuccess: Your account has been successfully updated.",
+                                addNewAddressSuccessMessage = "×\r\nYour address has been successfully inserted",
+                                deleteAddressSuccessMessage = "×\r\nYour address has been successfully deleted",
                                 adressBookEditSuccess = "×\r\nYour address has been successfully updated";
         }
         public static class Currencies
