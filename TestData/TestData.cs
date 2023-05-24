@@ -60,7 +60,6 @@
             public const string currentPassword = "test",
                                 newPassword = "test1";
         }
-        
         public static class ChangePurchaseAddress
         {
             public const string firstName = "ime narucioca",
@@ -68,6 +67,22 @@
                                 address = "ulica narucioca bb",
                                 city = "grad narucioca",
                                 zip = "12005";
+        }
+        public static class EditAccount
+        {
+            public const string firstName = "Test",
+                                lastName = "Tesic",
+                                email = "testtestic@test.com",
+                                phoneNumber = "060555996",
+                                fax = "123123";
+        }
+        public static class AddNewAddress
+        {
+            public const string firstName = "test",
+                                lastName = "test",
+                                address = "test 123",
+                                city = "test",
+                                zip = "54321";
         }
     }
 }
