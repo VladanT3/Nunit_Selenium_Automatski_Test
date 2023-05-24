@@ -1,13 +1,8 @@
 ﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Nunit_Selenium_Automatski_Test.Tests
 {
-    public class EditAccountDetailsTest:BaseTest
+    public class EditAccountDetailsTest : BaseTest
     {
         [SetUp]
         public void Setup()
