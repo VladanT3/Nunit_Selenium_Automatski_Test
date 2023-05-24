@@ -27,7 +27,6 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         By continueButton = By.XPath("//button[@title='Continue']");
         By wishlistButton = By.XPath("//ul[@class='side_account_list']/li[2]");
         By changePasswordButton = By.XPath("//ul[@class='side_account_list']/li[4]");
-        By manageAddressBookButton = By.XPath("//ul[@class='side_account_list']/li[5]");
 
 
         /// <summary>
@@ -78,14 +77,6 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         public void ClickChangePasswordButton()
         {
             ClickOnElement(changePasswordButton);
-        }
-
-        /// <summary>
-        /// Klik na manage address book dugme
-        /// </summary>
-        public void ClickManageAddressBookButton()
-        {
-            ClickOnElement(manageAddressBookButton);
         }
     }
 }
