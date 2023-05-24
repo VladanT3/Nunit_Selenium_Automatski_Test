@@ -1,10 +1,6 @@
-﻿
-using Nunit_Selenium_Automatski_Test.Pages;
-using Nunit_Selenium_Automatski_Test.Utils;
-using OpenQA.Selenium;
-using System.Threading;
+﻿using OpenQA.Selenium;
 
-namespace AutomationFramework.Pages
+namespace Nunit_Selenium_Automatski_Test.Pages
 {
     public class OrderDetailsPage : BasePage
     {
@@ -56,7 +52,7 @@ namespace AutomationFramework.Pages
         public string GetOrderDetailsText()
         {
             Thread.Sleep(500);
-            return CommonMethods.ReadText(driver, orderDetailsText);
+            return ReadTextFromElement(orderDetailsText);
         }
 
         /// <summary>

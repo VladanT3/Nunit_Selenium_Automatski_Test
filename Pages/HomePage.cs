@@ -26,10 +26,10 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         By loginOrRegisterLink = By.LinkText("Login or register");
         By contactUsLink = By.LinkText("Contact Us");
         //neki add to cart buttoni proslede na product page tako da ne moze za svaki proizvod da se uradi
-        By addToCartButton = By.XPath("//a[@data-id='88']");
-        By addToCartButton1 = By.XPath("//a[@data-id='66']");
+        By addToCartButton = By.XPath("//a[@data-id='66']");
+        By addToCartButton1 = By.XPath("//a[@data-id='52']");
         By cartButton = By.XPath("//ul[@class='nav topcart pull-left']/li[@class='dropdown hover']/a");
-        By productLink = By.XPath("//a[@title='ck one Summer 3.4 oz']");
+        By productLink = By.XPath("//a[@title='Total Moisture Facial Cream']");
         By currencyDropdown = By.XPath("//ul[@class='nav language pull-left']/li[@class='dropdown hover']");
         By currencyEuro = By.XPath("//li/a[contains(., '€ Euro')]");
         By currencyPound = By.XPath("//li/a[contains(., '£ Pound Sterling')]");

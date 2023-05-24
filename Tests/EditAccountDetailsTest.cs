@@ -25,6 +25,13 @@ namespace Nunit_Selenium_Automatski_Test.Tests
             //provera da li se poruke podudaraju
             Assert.AreEqual(AppConstants.Constants.Messages.editAccountSuccessMessage, message);
         }
+        [TearDown]
+        public void TearDown()
+        {
+            Pages.AccountPage.ClickEditAccountDetailsButton();
 
+            Pages.AccountDetailsPage.EnterEditAccount(TestData.TestData.EditAccount.firstName, TestData.TestData.EditAccount.lastName,
+                TestData.TestData.EditAccount.emailTeardown, TestData.TestData.EditAccount.phoneNumber, TestData.TestData.EditAccount.fax);
+        }
     }
 }

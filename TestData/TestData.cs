@@ -36,7 +36,7 @@
         }
         public static class AddToCart
         {
-            public const string productName = "ck one Summer 3.4 oz";
+            public const string productName = "Total Moisture Facial Cream";
         }
         public static class Checkout
         {
@@ -49,11 +49,11 @@
         }
         public static class SearchProduct
         {
-            public const string productName = "ck one Summer 3.4 oz";
+            public const string productName = "Total Moisture Facial Cream";
         }
         public static class AddItemToWishlist
         {
-            public const string productName = "ck one Summer 3.4 oz";
+            public const string productName = "Total Moisture Facial Cream";
         }
         public static class ChangePassword
         {
@@ -64,7 +64,7 @@
         {
             public const string productID = "19565",
                                 email = "vladanTest@test.com";
-
+        }
         public static class ChangePurchaseAddress
         {
             public const string firstName = "ime narucioca",
@@ -79,7 +79,8 @@
                                 lastName = "Tesic",
                                 email = "testtestic@test.com",
                                 phoneNumber = "060555996",
-                                fax = "123123";
+                                fax = "123123",
+                                emailTeardown = "vladanTest@test.com";
         }
         public static class AddNewAddress
         {

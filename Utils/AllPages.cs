@@ -1,5 +1,4 @@
-﻿using AutomationFramework.Pages;
-using Nunit_Selenium_Automatski_Test.Pages;
+﻿using Nunit_Selenium_Automatski_Test.Pages;
 using SeleniumExtras.PageObjects;
 
 namespace Nunit_Selenium_Automatski_Test.Utils
