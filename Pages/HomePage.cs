@@ -36,6 +36,10 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         By searchInput = By.Id("filter_keyword");
         By searchButton = By.XPath("//i[@class='fa fa-search']");
         By accountButton = By.XPath("//li[@class='dropdown']/a[@class='top menu_account']");
+        By homeButton = By.XPath("//a[@class='active menu_home']");
+        By accountLink = By.XPath("//ul[@id='main_menu']/li[@data-id='menu_account']");
+        By checkOrderLink = By.XPath("//ul[@id='main_menu']/li[@data-id='menu_account']/ul/li[@data-id='menu_order']");
+
 
 
         /// <summary>
@@ -129,6 +133,32 @@ namespace Nunit_Selenium_Automatski_Test.Pages
             ClickOnElement(productLink);
         }
 
+        /// <summary>
+        /// Metoda koja klikne na check order link
+        /// </summary>
+        public void ClickCheckOrder()
+        {
+            IWebElement mainMenu = driver.FindElement(homeButton);
+
+            //Instantiating Actions class
+            Actions actions = new Actions(driver);
+
+            //Hovering on main menu
+            actions.MoveToElement(mainMenu);
+
+            IWebElement subMenu = driver.FindElement(accountLink);
+            IWebElement subSubMenu = driver.FindElement(checkOrderLink);
+
+
+            //To mouseover on sub menu
+            actions.MoveToElement(subMenu);
+
+            //To mouseover on sub sub menu
+            actions.MoveToElement(subSubMenu);
+
+            //build()- used to compile all the actions into a single step
+            actions.Click().Build().Perform();
+        }
 
         /// <summary>
         /// Menja valutu u odredjenu vrednost koja je prosledjena pri pozivu

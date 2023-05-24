@@ -60,5 +60,10 @@
             public const string currentPassword = "test",
                                 newPassword = "test1";
         }
+        public static class CheckOrder
+        {
+            public const string productID = "19565",
+                                email = "vladanTest@test.com";
+        }
     }
 }

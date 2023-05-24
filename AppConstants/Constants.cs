@@ -14,7 +14,8 @@
             //haos
             public const string forgottenPasswordSuccessMessage = "×\r\nSuccess: Password reset link has been sent to your e-mail address.",
                                 forgottenLoginSuccessMessage = "×\r\nSuccess: Your login name reminder has been sent to your e-mail address.",
-                                changePasswordSuccessMessage = "×\r\nSuccess: Your password has been successfully updated.";
+                                changePasswordSuccessMessage = "×\r\nSuccess: Your password has been successfully updated.",
+                                orderDetailsHeadingText = "ORDER DETAILS";
         }
         public static class Currencies
         {

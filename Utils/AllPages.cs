@@ -1,4 +1,5 @@
-﻿using Nunit_Selenium_Automatski_Test.Pages;
+﻿using AutomationFramework.Pages;
+using Nunit_Selenium_Automatski_Test.Pages;
 using SeleniumExtras.PageObjects;
 
 namespace Nunit_Selenium_Automatski_Test.Utils
@@ -34,5 +35,6 @@ namespace Nunit_Selenium_Automatski_Test.Utils
         public CheckoutPage CheckoutPage => GetPages<CheckoutPage>();
         public WishlistPage WishlistPage => GetPages<WishlistPage>();
         public ChangePasswordPage ChangePasswordPage => GetPages<ChangePasswordPage>();
+        public OrderDetailsPage OrderDetailsPage => GetPages<OrderDetailsPage>();
     }
 }
