@@ -34,6 +34,9 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         By countrySelect = By.Id("guestFrm_country_id");
         By countrySelectOptions = By.XPath("//select[@id='guestFrm_country_id']/option");
         By continueButton = By.XPath("//button[@title='Continue']");
+        By editShippingAddressButton = By.XPath("//table[contains(@class, 'table confirm_shippment_options')]//a");
+        By changeAddressButton = By.XPath("//div[contains(@class, 'input-group')]/a");
+
 
 
         /// <summary>
@@ -161,5 +164,22 @@ namespace Nunit_Selenium_Automatski_Test.Pages
             Thread.Sleep(1000);
             return GetUrlLink();
         }
+
+        /// <summary>
+        /// Klik na edit shipping dugme
+        /// </summary>
+        public void ClickEditShippingAddress()
+        {
+            ClickOnElement(editShippingAddressButton);
+        }
+
+        /// <summary>
+        /// Klik na change address dugme
+        /// </summary>
+        public void ClickChangeAddress()
+        {
+            ClickOnElement(changeAddressButton);
+        }
+
     }
 }

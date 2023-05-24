@@ -7,7 +7,9 @@
             public const string registrationSuccessLink = "https://automationteststore.com/index.php?rt=account/success",
                                 loginSuccessLink = "https://automationteststore.com/index.php?rt=account/account",
                                 contactUsSuccessLink = "https://automationteststore.com/index.php?rt=content/contact/success",
-                                purchaseItemSuccessLink = "https://automationteststore.com/index.php?rt=checkout/success";
+                                purchaseItemSuccessLink = "https://automationteststore.com/index.php?rt=checkout/success",
+                                logoutLink = "https://automationteststore.com/index.php?rt=account/logout";
+        
         }
         public static class Messages
         {
