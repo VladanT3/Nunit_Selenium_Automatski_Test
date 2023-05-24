@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.DevTools.V111.Network;
 
 namespace Nunit_Selenium_Automatski_Test.Pages
 {

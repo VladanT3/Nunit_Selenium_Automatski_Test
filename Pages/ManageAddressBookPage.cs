@@ -25,7 +25,6 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         By newAddressButton = By.XPath("//a[@title='New Address']");
         By firstNameInput = By.Id("AddressFrm_firstname");
         By lastNameInput = By.Id("AddressFrm_lastname");
-        By emailInput = By.Id("AddressFrm_email");
         By addressInput = By.Id("AddressFrm_address_1");
         By cityInput = By.Id("AddressFrm_city");
         By regionStateSelect = By.Id("AddressFrm_zone_id");
@@ -36,6 +35,7 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         By continueButton = By.XPath("//button[@title='Continue']");
         By successMsg = By.XPath("//div[@class='alert alert-success']");
         By deleteButton = By.XPath("//button[@title='Delete']");
+        By EditButton = By.XPath("//button[@title='Edit']");
 
 
         /// <summary>
@@ -52,6 +52,7 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         /// <param name="firstName">First name</param>
         private void EnterFirstName(string firstName)
         {
+            ClearTextFromElement(firstNameInput);
             WriteTextToElement(firstNameInput, firstName);
         }
 
@@ -61,6 +62,7 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         /// <param name="lastName">Last name</param>
         private void EnterLastName(string lastName)
         {
+            ClearTextFromElement(lastNameInput);
             WriteTextToElement(lastNameInput, lastName);
         }
 
@@ -70,6 +72,7 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         /// <param name="address">Address</param>
         private void EnterAddress(string address)
         {
+            ClearTextFromElement(addressInput);
             WriteTextToElement(addressInput, address);
         }
 
@@ -79,6 +82,7 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         /// <param name="city">City</param>
         private void EnterCity(string city)
         {
+            ClearTextFromElement(cityInput);
             WriteTextToElement(cityInput, city);
         }
 
@@ -96,6 +100,7 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         /// <param name="zipCode">Zip</param>
         private void EnterZipCode(string zipCode)
         {
+            ClearTextFromElement(zipInput);
             WriteTextToElement(zipInput, zipCode);
         }
 
@@ -157,6 +162,39 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         public void ClickDeleteButton()
         {
             ClickOnElement(deleteButton);
+        }
+
+        /// <summary>
+        /// Klik na Edit dugme
+        /// </summary>
+        public void ClickOnEditAdressBook()
+        {
+            ClickOnElement(EditButton);
+        }
+
+        /// <summary>
+        /// Popunjava formu i klikce na continue
+        /// </summary>
+        /// <param name="firstName">First name</param>
+        /// <param name="lastName">Last name</param>
+        /// <param name="address">Address</param>
+        /// <param name="city">City</param>
+        /// <param name="zip">Zip</param>
+        public void FillEditAdressBook(string firstName, string lastName, string address, string city, string zip)
+        {
+            EnterFirstName(firstName);
+            EnterLastName(lastName);
+            EnterAddress(address);
+            EnterCity(city);
+            ChooseRandomCountry();
+            //Potreban thread sleep jer program crkne dok izvuce 241 drzavu pa jednu random od njih
+            //zato se moze videti ona dosta duza pauza od pola sekunde kad dodje do ovog dela
+            Thread.Sleep(1000);
+            ChooseRandomRegion();
+            //Ovde mozda ne mora al nisam gledao da li mozda neka drzava ima preveliki broj regiona pa za svaki slucaj
+            Thread.Sleep(1000);
+            EnterZipCode(zip);
+            ClickContinueButton();
         }
     }
 }

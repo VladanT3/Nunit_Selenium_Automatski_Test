@@ -90,5 +90,13 @@
                                 city = "test",
                                 zip = "54321";
         }
+        public static class EditAddress
+        {
+            public const string firstName = "Test123",
+                                lastName = "Test321",
+                                address = "Test 312",
+                                city = "Test 456",
+                                zip = "54321";
+        }
     }
 }
