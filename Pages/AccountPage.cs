@@ -28,6 +28,7 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         By wishlistButton = By.XPath("//ul[@class='side_account_list']/li[2]");
         By changePasswordButton = By.XPath("//ul[@class='side_account_list']/li[4]");
         By editAccountDetailsButton = By.XPath("//ul[@class='side_account_list']/li[3]");
+        By manageAddressBookButton = By.XPath("//ul[@class='side_account_list']/li[5]");
         By successMsg = By.XPath("//div[@class='alert alert-success']");
 
         /// <summary>
@@ -88,10 +89,21 @@ namespace Nunit_Selenium_Automatski_Test.Pages
             ClickOnElement(editAccountDetailsButton);
         }
 
+        /// <summary>
+        /// Vraca poruku koja se koristi za assert
+        /// </summary>
+        /// <returns></returns>
         public string GetSuccessMessage()
         {
             return ReadTextFromElement(successMsg);
         }
 
+        /// <summary>
+        /// Klik na manage address book dugme
+        /// </summary>
+        public void ClickManageAddressBookButton()
+        {
+            ClickOnElement(manageAddressBookButton);
+        }
     }
 }
