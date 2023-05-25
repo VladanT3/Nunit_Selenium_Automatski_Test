@@ -172,12 +172,7 @@ namespace Nunit_Selenium_Automatski_Test.Pages
             EnterAddress(address);
             EnterCity(city);
             ChooseRandomCountry();
-            //Potreban thread sleep jer program crkne dok izvuce 241 drzavu pa jednu random od njih
-            //zato se moze videti ona dosta duza pauza od pola sekunde kad dodje do ovog dela
-            Thread.Sleep(1000);
             ChooseRandomRegion();
-            //Ovde mozda ne mora al nisam gledao da li mozda neka drzava ima preveliki broj regiona pa za svaki slucaj
-            Thread.Sleep(1000);
             EnterZipCode(zip);
             EnterLoginName(loginName);
             EnterPassword(password);

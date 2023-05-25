@@ -51,7 +51,6 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         /// <returns>Vraca order deatails text</returns>
         public string GetOrderDetailsText()
         {
-            Thread.Sleep(500);
             return ReadTextFromElement(orderDetailsText);
         }
 
@@ -74,6 +73,5 @@ namespace Nunit_Selenium_Automatski_Test.Pages
             EnterEmail(email);
             ClickOnContinueButton();
         }
-        
     }
 }

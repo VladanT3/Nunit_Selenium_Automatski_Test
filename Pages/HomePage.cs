@@ -196,24 +196,6 @@ namespace Nunit_Selenium_Automatski_Test.Pages
             actions.Click().Build().Perform();
         }
 
-        /*/// <summary>
-        /// Postavlja valutu na evro
-        /// </summary>
-        public void SetCurrencyToEuro()
-        {
-            ClickCurrencyDropdownMenu();
-            ClickCurrencyEuro();
-        }
-
-        /// <summary>
-        /// Postavlja valutu na pound
-        /// </summary>
-        public void SetCurrencyToPound()
-        {
-            ClickCurrencyDropdownMenu();
-            ClickCurrencyPound();
-        }*/
-
         /// <summary>
         /// Dodaje dva proizvoda u korpu
         /// </summary>

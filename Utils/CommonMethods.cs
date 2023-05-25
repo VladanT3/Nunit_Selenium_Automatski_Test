@@ -13,9 +13,9 @@ namespace Nunit_Selenium_Automatski_Test.Utils
         /// <summary>
         /// Metoda koja ceka vidljivost elementa
         /// </summary>
-        private static void WaitElementVisibility(IWebDriver driver, By element)
+        private static void WaitElementVisibility(IWebDriver driver, By element, uint timeOut = 20)
         {
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeOut));
             wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(element));
         }
 
@@ -129,8 +129,10 @@ namespace Nunit_Selenium_Automatski_Test.Utils
         /// <param name="skip">Koliko clanova sa pocetka se preskace</param>
         public static void ClickRandomOption(IWebDriver driver, By selectElement, By optionsElement, int skip = 0)
         {
+            WaitElementVisibility(driver, optionsElement);
             List<string> options = GetAllOptions(driver, optionsElement);
 
+            WaitElementVisibility(driver, selectElement);
             SelectElement select = new SelectElement(driver.FindElement(selectElement));
 
             select.SelectByText(GetRandomItemFromList(options, skip));
@@ -270,6 +272,7 @@ namespace Nunit_Selenium_Automatski_Test.Utils
 
         public static int ReturnNumberOfRowsFromTable(IWebDriver driver, By tableRows)
         {
+            WaitElementVisibility(driver, tableRows);
             ReadOnlyCollection<IWebElement> rows = driver.FindElements(tableRows);
 
             return rows.Count;

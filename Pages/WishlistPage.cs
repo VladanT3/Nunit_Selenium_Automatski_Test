@@ -49,7 +49,6 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         /// <returns></returns>
         public int GetNumberOfWishlistTableRows()
         {
-            Thread.Sleep(500);
             return GetNumberOfRowsFromTable(wishlistTableRows);
         }
     }

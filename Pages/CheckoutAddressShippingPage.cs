@@ -114,12 +114,9 @@ namespace Nunit_Selenium_Automatski_Test.Pages
             EnterAddress(address);
             EnterCity(city);
             ChooseRandomCountry();
-            Thread.Sleep(300);
             ChooseRandomRegion();
-            Thread.Sleep(300);
             EnterZip(zip);
             ClickContinueButton();
         }
-
     }
 }

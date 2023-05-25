@@ -92,9 +92,5 @@ namespace Nunit_Selenium_Automatski_Test.Pages
             EnterFax(fax);
             ClickOnContinueButton();
         }
-
-        
-
-
     }
 }
