@@ -19,7 +19,7 @@ namespace Nunit_Selenium_Automatski_Test.Tests
             //klik na logoff
             Pages.AccountPage.ClickLogout();
             //cuva url trenutne stranice
-            string url = Pages.CheckoutPage.GetSuccessUrl();
+            string url = Pages.CheckoutPage.GetSuccessUrl(AppConstants.Constants.UrlLinks.logoutLink);
             //assert test
             Assert.AreEqual(AppConstants.Constants.UrlLinks.logoutLink, url);
         }

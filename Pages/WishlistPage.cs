@@ -24,6 +24,7 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         //Lokatori
         By wishlistTableRows = By.XPath("//table[@class='table table-striped table-bordered']/tbody/tr");
         By removeWishlistItem = By.XPath("//i[@class='fa fa-trash-o fa-fw']");
+        By wishlistTableSecondRow = By.XPath("//table[@class='table table-striped table-bordered']/tbody/tr[2]");
 
 
         /// <summary>
@@ -50,6 +51,14 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         public int GetNumberOfWishlistTableRows()
         {
             return GetNumberOfRowsFromTable(wishlistTableRows);
+        }
+
+        /// <summary>
+        /// Ceka da se proizvod skloni iz tabele
+        /// </summary>
+        public void WaitForItemToBeRemoved()
+        {
+            WaitForElementInvisibility(wishlistTableSecondRow);
         }
     }
 }

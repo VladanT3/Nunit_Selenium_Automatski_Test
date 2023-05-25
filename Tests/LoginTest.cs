@@ -17,7 +17,7 @@ namespace Nunit_Selenium_Automatski_Test.Tests
             Pages.LoginPage.LoginUser(TestData.TestData.Login.username, TestData.TestData.Login.password);
 
             //pamti trenutni url link
-            string url = Pages.LoginPage.ReturnLoginSuccessLink();
+            string url = Pages.LoginPage.ReturnLoginSuccessLink(AppConstants.Constants.UrlLinks.loginSuccessLink);
             //provera da li nas je prosledio na dobru stranicu
             Assert.AreEqual(AppConstants.Constants.UrlLinks.loginSuccessLink, url);
         }

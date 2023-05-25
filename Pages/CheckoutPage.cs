@@ -153,11 +153,11 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         /// Vraca url trenutne stranice
         /// </summary>
         /// <returns>Url stranice</returns>
-        public string GetSuccessUrl()
+        public string GetSuccessUrl(string url)
         {
             //thread sleep jer uhvati link od prosle stranice
-            Thread.Sleep(1000);
-            return GetUrlLink();
+            //Thread.Sleep(1000);
+            return GetUrlLink(url);
         }
 
         /// <summary>

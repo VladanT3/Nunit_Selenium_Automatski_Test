@@ -94,10 +94,10 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         /// Vraca url logout stranice
         /// </summary>
         /// <returns></returns>
-        public string GetLogoutUrl()
+        public string GetLogoutUrl(string url)
         {
-            Thread.Sleep(300);
-            return GetUrlLink();
+            //Thread.Sleep(300);
+            return GetUrlLink(url);
         }
 
         /// Klik na edit account dugme

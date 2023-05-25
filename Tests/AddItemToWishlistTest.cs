@@ -36,6 +36,8 @@ namespace Nunit_Selenium_Automatski_Test.Tests
         {
             //brise dodati proizvod iz wishlista
             Pages.WishlistPage.RemoveItemFromWishlist();
+            //ceka da se proizvod izbaci iz tabele
+            Pages.WishlistPage.WaitForItemToBeRemoved();
 
             //broj redova u tabeli
             int numOfRows = Pages.WishlistPage.GetNumberOfWishlistTableRows();

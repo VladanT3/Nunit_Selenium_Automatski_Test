@@ -77,9 +77,9 @@ namespace Nunit_Selenium_Automatski_Test.Pages
             ClickSubmitButton();
         }
 
-        public string GetSuccessUrlLink()
+        public string GetSuccessUrlLink(string url)
         {
-            return GetUrlLink();
+            return GetUrlLink(url);
         }
     }
 }

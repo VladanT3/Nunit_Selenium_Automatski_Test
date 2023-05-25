@@ -53,9 +53,9 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         /// Poziva common metodu UrlLink da vrati url link trenutne stranice
         /// </summary>
         /// <returns>Url link trenutne stranice</returns>
-        protected string GetUrlLink()
+        protected string GetUrlLink(string url)
         {
-            return CommonMethods.UrlLink(driver);
+            return CommonMethods.UrlLink(driver, url);
         }
 
 
@@ -132,6 +132,16 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         protected int GetNumberOfRowsFromTable(By tableRows)
         {
             return CommonMethods.ReturnNumberOfRowsFromTable(driver, tableRows);
+        }
+
+
+        /// <summary>
+        /// Poziva common metodu WaitForElementToBeRemoved koja ceka da se element skloni sa stranice
+        /// </summary>
+        /// <param name="element">Element</param>
+        protected void WaitForElementInvisibility(By element)
+        {
+            CommonMethods.WaitForElementToBeRemoved(driver, element);
         }
     }
 }

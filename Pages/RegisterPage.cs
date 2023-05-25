@@ -181,9 +181,9 @@ namespace Nunit_Selenium_Automatski_Test.Pages
             ClickContinueButton();
         }
 
-        public string ReturnRegisterSuccessUrl()
+        public string ReturnRegisterSuccessUrl(string url)
         {
-            return GetUrlLink();
+            return GetUrlLink(url);
         }
     }
 }

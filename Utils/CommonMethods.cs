@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using SeleniumExtras.WaitHelpers;
 using System.Collections.ObjectModel;
+using System.Threading;
 
 namespace Nunit_Selenium_Automatski_Test.Utils
 {
@@ -17,6 +18,32 @@ namespace Nunit_Selenium_Automatski_Test.Utils
         {
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeOut));
             wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(element));
+        }
+
+        
+        /// <summary>
+        /// Ceka da se pojavi odredjeni url
+        /// </summary>
+        /// <param name="driver">Driver</param>
+        /// <param name="url">Url</param>
+        /// <param name="timeOut">Default vreme cekanja</param>
+        private static void WaitForUrl(IWebDriver driver, string url, uint timeOut = 20)
+        {
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeOut));
+            wait.Until(ExpectedConditions.UrlToBe(url));
+        }
+
+
+        /// <summary>
+        /// Ceka da se element skloni sa stranice
+        /// </summary>
+        /// <param name="driver">Driver</param>
+        /// <param name="element">Element</param>
+        /// <param name="timeOut">Default vreme cekanja</param>
+        public static void WaitForElementToBeRemoved(IWebDriver driver, By element, uint timeOut = 20)
+        {
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeOut));
+            wait.Until(ExpectedConditions.InvisibilityOfElementLocated(element));
         }
 
 
@@ -62,8 +89,9 @@ namespace Nunit_Selenium_Automatski_Test.Utils
         /// Vraca url link stranice
         /// </summary>
         /// <returns></returns>
-        public static string UrlLink(IWebDriver driver)
+        public static string UrlLink(IWebDriver driver, string url)
         {
+            WaitForUrl(driver, url);
             return driver.Url;
         }
 
@@ -270,6 +298,12 @@ namespace Nunit_Selenium_Automatski_Test.Utils
         }
 
 
+        /// <summary>
+        /// Vraca broj redova u tabeli
+        /// </summary>
+        /// <param name="driver">Driver</param>
+        /// <param name="tableRows">Redovi iz tabele</param>
+        /// <returns>Broj redova</returns>
         public static int ReturnNumberOfRowsFromTable(IWebDriver driver, By tableRows)
         {
             WaitElementVisibility(driver, tableRows);

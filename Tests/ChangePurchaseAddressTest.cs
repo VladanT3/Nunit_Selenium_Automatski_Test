@@ -36,7 +36,7 @@ namespace Nunit_Selenium_Automatski_Test.Tests
             //klik na confirm order dugme
             Pages.CheckoutPage.ClickConfirmOrderButton();
             //cuva url trenutne stranice
-            string url = Pages.CheckoutPage.GetSuccessUrl();
+            string url = Pages.CheckoutPage.GetSuccessUrl(AppConstants.Constants.UrlLinks.purchaseItemSuccessLink);
             //provera da li smo na dobroj stranici
             Assert.AreEqual(AppConstants.Constants.UrlLinks.purchaseItemSuccessLink, url);
         }

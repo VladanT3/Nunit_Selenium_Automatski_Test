@@ -80,9 +80,9 @@ namespace Nunit_Selenium_Automatski_Test.Pages
         /// Vraca url da bi proverili da li je otisao na dobru stranicu
         /// </summary>
         /// <returns>Url trenutne stranice</returns>
-        public string ReturnLoginSuccessLink()
+        public string ReturnLoginSuccessLink(string url)
         {
-            return GetUrlLink();
+            return GetUrlLink(url);
         }
 
         /// <summary>

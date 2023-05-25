@@ -35,7 +35,7 @@ namespace Nunit_Selenium_Automatski_Test.Tests
             );
 
             //belezi se url trenutne stranice
-            string url = Pages.RegisterPage.ReturnRegisterSuccessUrl();
+            string url = Pages.RegisterPage.ReturnRegisterSuccessUrl(AppConstants.Constants.UrlLinks.registrationSuccessLink);
             //proverava se zabalezeni url sa onim koji bi trebao da bude
             Assert.AreEqual(AppConstants.Constants.UrlLinks.registrationSuccessLink, url);
         }

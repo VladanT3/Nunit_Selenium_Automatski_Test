@@ -21,7 +21,7 @@ namespace Nunit_Selenium_Automatski_Test.Tests
             );
             
             //cuva trenutni link za assert
-            string url = Pages.ContactUsPage.GetSuccessUrlLink();
+            string url = Pages.ContactUsPage.GetSuccessUrlLink(AppConstants.Constants.UrlLinks.contactUsSuccessLink);
             //uporedjivanje da li smo na dobroj stranici
             Assert.AreEqual(AppConstants.Constants.UrlLinks.contactUsSuccessLink, url);
         }
